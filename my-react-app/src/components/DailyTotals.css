@@ -1,0 +1,283 @@
+
+/* Base Styles */
+.daily-totals-container {
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin-top: auto;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Loading States */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #6c757d;
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Nutrition Cards */
+.nutrition-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nutrition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.nutrition-card .card-title {
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nutrition-card .card-subtitle {
+  font-size: 0.85rem;
+}
+
+/* Card type colors */
+.daily-card {
+  border-top: 4px solid #3498db;
+}
+
+.weekly-card {
+  border-top: 4px solid #2ecc71;
+}
+
+.monthly-card {
+  border-top: 4px solid #9b59b6;
+}
+
+/* Nutrition Stats */
+.nutrition-stats {
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 0.2rem;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.stat-progress {
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 0.3rem;
+}
+
+/* Meal Table */
+.meal-table {
+  --bs-table-bg: transparent;
+}
+
+.meal-table th {
+  font-weight: 600;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom-width: 2px;
+}
+
+.meal-table td {
+  vertical-align: middle;
+}
+
+.meal-badge {
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+  text-transform: capitalize;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.empty-state h5 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* Chart Controls */
+.chart-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Modal Styles */
+.modal-content {
+  border: none;
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* DailyTotals.css */
+.daily-totals-container {
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.meal-badge {
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+}
+
+.target-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .page-header {
+      margin-bottom: 1.5rem;
+  }
+  
+  .page-header h1 {
+      font-size: 1.8rem;
+  }
+  
+  .nutrition-card {
+      margin-bottom: 1.5rem;
+  }
+  
+  .meal-table th, 
+  .meal-table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.85rem;
+  }
+  
+  .chart-controls {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .chart-controls .btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nutrition-card, .meal-table {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Tooltip Styles */
+.recharts-tooltip {
+  background: white !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+}
+
+.recharts-tooltip-label {
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.recharts-tooltip-item {
+  color: #7f8c8d !important;
+}

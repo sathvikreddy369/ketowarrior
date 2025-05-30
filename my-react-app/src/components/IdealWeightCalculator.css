@@ -1,0 +1,249 @@
+.ideal-weight-calculator-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator-card, .results-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.calculator-header {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.calculator-header h2 {
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.calculator-body {
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group .dropdown-toggle {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0.25rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.btn-outline-secondary {
+  border-color: #ced4da;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+}
+
+/* Results Section */
+.results-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.results-header {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.results-header h3 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.results-body {
+  padding: 1.5rem;
+}
+
+.result-summary {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed #e9ecef;
+}
+
+.formula-used {
+  margin-bottom: 1rem;
+}
+
+.weight-range {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.range-value {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  min-width: 120px;
+}
+
+.range-value.min {
+  border: 2px solid #3498db;
+}
+
+.range-value.max {
+  border: 2px solid #2ecc71;
+}
+
+.range-value .value {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.range-value .unit {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.range-separator {
+  margin: 0 1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.note {
+  margin-top: 1rem;
+}
+
+.weight-tips {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.weight-tips h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tip-item {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tip-bullet {
+  color: #3498db;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ideal-weight-calculator-container {
+      padding: 0 0.5rem;
+  }
+  
+  .calculator-card, .results-card {
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 1rem;
+  }
+  
+  .weight-range {
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .range-separator {
+      margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .calculator-body, .results-body {
+      padding: 1rem;
+  }
+  
+  .range-value {
+      min-width: 100px;
+      padding: 0.75rem 1rem;
+  }
+  
+  .range-value .value {
+      font-size: 1.5rem;
+  }
+}

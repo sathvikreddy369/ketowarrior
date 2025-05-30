@@ -1,0 +1,197 @@
+.tech-footer {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: 60px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tech-footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tech-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.tech-footer .footer-brand {
+    flex: 1;
+    max-width: 400px;
+}
+
+.tech-footer .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #cbd5e0;
+}
+
+.tech-footer .footer-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.tech-footer .social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.tech-footer .social-links a {
+    color: #cbd5e0;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tech-footer .social-links a:hover {
+    color: #00c896;
+}
+
+.tech-footer .footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.tech-footer .link-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.tech-footer .link-group-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #cbd5e0;
+}
+
+.tech-footer .link-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-footer .link-group ul li {
+    margin-bottom: 10px;
+}
+
+.tech-footer .link-group ul li a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.tech-footer .link-group ul li a:hover {
+    color: #00b4d8;
+}
+
+.tech-footer .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #2d3748;
+}
+
+.tech-footer .copyright {
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+/* Responsive Styles */
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    .tech-footer {
+        padding: 40px 0;
+    }
+
+    .tech-footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .tech-footer .footer-brand {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .tech-footer .social-links {
+        justify-content: center;
+    }
+
+    .tech-footer .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .tech-footer .link-group {
+        min-width: auto;
+    }
+
+    .tech-footer .link-group ul li {
+        margin-bottom: 8px;
+    }
+
+    .tech-footer .footer-bottom {
+        padding-top: 15px;
+    }
+}
+
+/* Tablets and small laptops (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tech-footer {
+        padding: 50px 0;
+    }
+
+    .tech-footer .footer-content {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .tech-footer .footer-brand {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .tech-footer .social-links {
+        justify-content: center;
+    }
+
+    .tech-footer .footer-links {
+        justify-content: space-around;
+    }
+
+    .tech-footer .link-group {
+        flex-basis: auto;
+        min-width: 180px;
+        text-align: center;
+    }
+}
+
+/* Larger laptops and desktops (992px and above) - These styles are already in the base CSS */
+@media (min-width: 992px) {
+    .tech-footer .container {
+        padding: 0 30px;
+    }
+
+    .tech-footer .footer-content {
+        margin-bottom: 50px;
+    }
+
+    .tech-footer .footer-links {
+        gap: 60px;
+    }
+}

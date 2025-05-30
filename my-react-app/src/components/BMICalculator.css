@@ -1,0 +1,270 @@
+.bmi-calculator-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator-card, .results-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.calculator-header {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.calculator-header h2 {
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.calculator-body {
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  display: flex;
+  align-items: center;
+}
+
+.form-control, .form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group .dropdown-toggle {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0.25rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.btn-outline-secondary {
+  border-color: #ced4da;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+}
+
+/* Results Section */
+.results-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.results-header {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.results-header h3 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0;
+}
+
+.results-body {
+  padding: 1.5rem;
+}
+
+.bmi-value-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bmi-value {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.bmi-category {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bmi-scale-container {
+  margin: 2rem 0;
+}
+
+.bmi-scale {
+  display: flex;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.scale-segment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.scale-segment span {
+  margin-bottom: 0.25rem;
+}
+
+.segment-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.segment-label.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+}
+
+.underweight {
+  background-color: #3498db;
+}
+
+.normal {
+  background-color: #2ecc71;
+}
+
+.overweight {
+  background-color: #f39c12;
+}
+
+.obese {
+  background-color: #e74c3c;
+}
+
+.bmi-interpretation {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.bmi-interpretation h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.bmi-interpretation p {
+  color: #495057;
+  margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bmi-calculator-container {
+      padding: 0 0.5rem;
+  }
+  
+  .calculator-card, .results-card {
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 1rem;
+  }
+  
+  .bmi-scale {
+      height: 50px;
+  }
+  
+  .scale-segment {
+      font-size: 0.75rem;
+  }
+  
+  .segment-label {
+      display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .calculator-body {
+      padding: 1rem;
+  }
+  
+  .bmi-value {
+      font-size: 3rem;
+  }
+  
+  .bmi-category {
+      font-size: 1rem;
+  }
+  
+  .bmi-scale {
+      flex-direction: column;
+      height: auto;
+  }
+  
+  .scale-segment {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+  }
+  
+  .segment-label {
+      display: inline;
+      font-size: 0.7rem;
+  }
+}

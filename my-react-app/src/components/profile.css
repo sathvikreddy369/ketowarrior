@@ -1,0 +1,726 @@
+:root {
+  --primary-color: #2e7d32;
+  --primary-light: #e8f5e9;
+  --primary-dark: #1b5e20;
+  --secondary-color: #1565c0;
+  --accent-color: #ff8f00;
+  --danger-color: #c62828;
+  --warning-color: #ff9800;
+  --success-color: #4caf50;
+  --text-dark: #212121;
+  --text-medium: #424242;
+  --text-light: #757575;
+  --border-color: #e0e0e0;
+  --background-light: #f5f5f5;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --transition: all 0.2s ease-in-out; /*added later*/
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #f9f9f9;
+}
+
+
+/* ProfilePage.css */
+
+/* Base Styles */
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.profile-loading  /*added later*/ {
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.profile-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #4CAF50;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+}
+
+.error-icon {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.retry-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.retry-button:hover {
+  background: #45a049;
+}
+
+/* Header Styles */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  margin-right: 1.5rem;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757575;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-username {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.profile-subtitle {
+  margin: 0.5rem 0 0;
+  color: #757575;
+  font-size: 1rem;
+}
+
+/* Profile Card */
+.profile-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.profile-card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Form Styles */
+.profile-form {
+  margin-top: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-label .icon {
+  margin-right: 0.5rem;
+  color: #4CAF50;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-value {
+  padding: 0.75rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  color: #555;
+}
+
+.date-picker-wrapper {
+  width: 100%;
+}
+
+/* Enhanced form controls--added later */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+/* Add focus styles--added later */
+button:focus, input:focus, select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* BMI Section */
+.bmi-section {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.bmi-card {
+  flex: 1;
+  min-width: 200px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.bmi-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+.bmi-header h3 {
+  margin: 0 0 0 0.5rem;
+}
+
+.bmi-content {
+  padding: 1rem 0;
+}
+
+.bmi-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bmi-category {
+  font-size: 1.1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.underweight {
+  color: #2196F3;
+}
+
+.normal {
+  color: #4CAF50;
+}
+
+.overweight {
+  color: #FF9800;
+}
+
+.obese {
+  color: #f44336;
+}
+
+.bmi-empty {
+  color: #757575;
+  font-style: italic;
+}
+
+.bmi-info {
+  flex: 2;
+  min-width: 300px;
+}
+
+.bmi-info p {
+  margin-top: 0;
+  color: #555;
+}
+
+.bmi-ranges {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.bmi-ranges li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.bmi-ranges li span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.bmi-ranges li span.underweight {
+  background: #2196F3;
+}
+
+.bmi-ranges li span.normal {
+  background: #4CAF50;
+}
+
+.bmi-ranges li span.overweight {
+  background: #FF9800;
+}
+
+.bmi-ranges li span.obese {
+  background: #f44336;
+}
+
+/* Health Section */
+.health-section {
+  margin: 2rem 0;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #4CAF50;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.section-header .icon {
+  margin-right: 0.5rem;
+}
+
+.health-group {
+  margin-bottom: 1.5rem;
+}
+
+.health-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.health-label .icon {
+  margin-right: 0.5rem;
+  color: #4CAF50;
+}
+
+.health-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Update health tags */
+.health-tag {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.health-tag:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.remove-tag {
+  background: none;
+  border: none;
+  color: #00838f;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.health-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.health-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.add-tag-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-tag-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Macros Section */
+.macros-section {
+  margin: 2rem 0;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.macros-selection {
+  margin-bottom: 2rem;
+}
+
+.macros-selection h4 {
+  margin: 0 0 1rem;
+  color: #555;
+}
+
+.macros-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.macro-option {
+  display: flex;
+  align-items: center;
+}
+
+.macro-option input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.macro-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.macro-icon {
+  margin-right: 0.5rem;
+  color: #4CAF50;
+}
+
+.macro-name {
+  text-transform: capitalize;
+}
+
+.macro-targets h4 {
+  margin: 1.5rem 0 1rem;
+  color: #555;
+}
+
+.targets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.target-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.target-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.target-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.target-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  max-width: 100px;
+}
+
+.target-unit {
+  margin-left: 0.5rem;
+  color: #757575;
+}
+
+/* Button Styles */
+.edit-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.edit-button:hover {
+  background: #45a049;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cancel-button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.cancel-button:hover {
+  background: #d32f2f;
+}
+
+.save-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.save-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Saved Popup */
+.profile-saved-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-icon {
+  margin-bottom: 1rem;
+}
+
+.popup-icon.success {
+  color: #4CAF50;
+}
+
+.popup-card h3 {
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.popup-card p {
+  margin: 0 0 1.5rem;
+  color: #555;
+}
+
+.popup-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-button:hover {
+  background: #45a049;
+}
+/* Icon colors */
+.icon {
+  color: var(--primary-color);
+}
+
+.health-label .icon {
+  color: var(--primary-color);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-avatar {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .bmi-section {
+    flex-direction: column;
+  }
+  
+  .bmi-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cancel-button,
+  .save-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .macros-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
