@@ -21,18 +21,16 @@ Preview Link: https://ketowarrior.vercel.app/
 
 ## 🎯 About
 
-KetoWarrior is a comprehensive web application designed to help users manage and optimize their ketogenic diet journey. It provides tools for meal planning, macro tracking, recipe recommendations, and AI-powered nutritional insights to keep you on track with your health goals.
+KetoWarrior is a comprehensive web application designed to help users manage and optimize their ketogenic diet journey. It provides tools for macro tracking, progress analytics, and personalized AI recommendations to support your keto lifestyle goals.
 
 ---
 
 ## ✨ Features
 
-- **Meal Planning**: Create and organize your daily meal plans
-- **Macro Tracking**: Monitor your carbohydrates, proteins, and fats
-- **Recipe Library**: Browse and search keto-friendly recipes
+- **Macro Tracking**: Monitor your carbohydrates, proteins, and fats with precision
 - **AI-Powered Recommendations**: Get personalized meal suggestions using Google Gemini API
 - **User Authentication**: Secure login with Firebase Authentication
-- **Progress Analytics**: Visualize your dietary progress with charts
+- **Progress Analytics**: Visualize your dietary progress with interactive charts
 - **Email Notifications**: Stay updated with scheduled email reminders
 - **Responsive Design**: Beautiful UI that works on desktop and mobile devices
 
@@ -165,15 +163,14 @@ npm start
 
 ### Tracking Your Macros
 1. Log in to your account
-2. Navigate to "Meal Tracker"
+2. Navigate to "Macro Tracker"
 3. Add foods to your daily log
 4. Monitor your macro distribution (carbs, protein, fat)
 
-### Getting Recipe Recommendations
-1. Go to "Recipes" section
-2. Browse the recipe library or search by ingredients
-3. Get AI-powered suggestions based on your preferences
-4. Click on recipes to see detailed nutritional information
+### Getting AI Recommendations
+1. Go to the recommendations section
+2. View AI-powered suggestions based on your preferences and dietary goals
+3. Use the suggestions to optimize your keto journey
 
 ### Viewing Your Progress
 1. Check the "Analytics" dashboard
@@ -208,7 +205,7 @@ For issues, questions, or feedback, please open an issue on GitHub or contact th
 
 ## 🙏 Acknowledgments
 
-- Google Generative AI for powering recipe recommendations
+- Google Generative AI for powering recommendations
 - Firebase for authentication and hosting
 - MongoDB for database support
 - All contributors and users of KetoWarrior
