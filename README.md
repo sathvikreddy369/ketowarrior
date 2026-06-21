@@ -21,14 +21,14 @@ Preview Link: https://ketowarrior.vercel.app/
 
 ## 🎯 About
 
-KetoWarrior is a comprehensive web application designed to help users manage and optimize their ketogenic diet journey. It provides tools for macro tracking, progress analytics, and personalized AI recommendations to support your keto lifestyle goals.
+KetoWarrior is a comprehensive web application designed to help users manage and optimize their ketogenic diet journey. It provides tools for macro tracking, streak monitoring, progress analytics, and email notifications to support your keto lifestyle goals.
 
 ---
 
 ## ✨ Features
 
 - **Macro Tracking**: Monitor your carbohydrates, proteins, and fats with precision
-- **AI-Powered Recommendations**: Get personalized meal suggestions using Google Gemini API
+- **Streak Tracking**: Build and maintain your consistency streak to stay motivated 🔥
 - **User Authentication**: Secure login with Firebase Authentication
 - **Progress Analytics**: Visualize your dietary progress with interactive charts
 - **Email Notifications**: Stay updated with scheduled email reminders
@@ -51,7 +51,6 @@ KetoWarrior is a comprehensive web application designed to help users manage and
 - **Node.js & Express.js** - Server framework
 - **MongoDB & Mongoose** - NoSQL database
 - **Firebase** - Authentication and hosting
-- **Google Generative AI** - AI-powered recommendations
 - **JWT** - Secure token authentication
 - **Nodemailer & EmailJS** - Email services
 
@@ -98,7 +97,6 @@ ketowarrior/
 - npm or yarn
 - MongoDB account (for database)
 - Firebase account (for authentication)
-- Google Cloud account (for Generative AI API)
 
 ### Frontend Setup
 
@@ -121,7 +119,6 @@ Create a `.env` file in the backend directory with the following:
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 FIREBASE_API_KEY=your_firebase_api_key
-GOOGLE_API_KEY=your_google_generative_ai_key
 JWT_SECRET=your_jwt_secret
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASSWORD=your_email_password
@@ -167,10 +164,11 @@ npm start
 3. Add foods to your daily log
 4. Monitor your macro distribution (carbs, protein, fat)
 
-### Getting AI Recommendations
-1. Go to the recommendations section
-2. View AI-powered suggestions based on your preferences and dietary goals
-3. Use the suggestions to optimize your keto journey
+### Building Your Streak
+1. Track your macros consistently each day
+2. View your current streak on your dashboard
+3. Stay motivated and build consistency over time
+4. Receive notifications to help maintain your streak
 
 ### Viewing Your Progress
 1. Check the "Analytics" dashboard
@@ -205,7 +203,6 @@ For issues, questions, or feedback, please open an issue on GitHub or contact th
 
 ## 🙏 Acknowledgments
 
-- Google Generative AI for powering recommendations
 - Firebase for authentication and hosting
 - MongoDB for database support
 - All contributors and users of KetoWarrior
